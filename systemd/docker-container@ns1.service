@@ -1,0 +1,18 @@
+[Unit]
+Description=Docker Container Dnsmasq
+Requires=docker.service
+After=docker.service
+
+[Service]
+Restart=always
+TimeoutStartSec=0
+RestartSec=60
+StartLimitInterval=240
+StartLimitBurst=5
+ExecStart=/usr/bin/docker run --cap-add=NET_ADMIN -v /var/dns:/etc/dnsmasq.d:rw --name=ns1 dnsmasq
+ExecStop=/usr/bin/docker stop ns1
+ExecStopPost=/usr/bin/docker rm -f ns1
+
+[Install]
+WantedBy=default.target
+
