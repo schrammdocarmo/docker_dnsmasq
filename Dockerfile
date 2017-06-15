@@ -1,4 +1,4 @@
-FROM alpine:3.4
+FROM alpine:3.6
 RUN apk --no-cache add dnsmasq
 
 # Setting timezone

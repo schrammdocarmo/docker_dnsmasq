@@ -1,4 +1,4 @@
-# DNSMASQ on Alpine Linux 3.4
+# DNSMASQ on Alpine Linux 3.6
 
 For those looking for a minimal DNS service running on a very small image (~6-7MB)
 
